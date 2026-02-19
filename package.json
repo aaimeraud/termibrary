@@ -1,0 +1,23 @@
+{
+  "name": "projet-term-library",
+  "version": "0.1",
+  "description": "Bibliothèque en console",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node main.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^12.6.2"
+  },
+  "keywords": [
+    "javascript",
+    "poo",
+    "oop",
+    "console",
+    "library"
+  ],
+  "author": "Daniel Fortuné",
+  "contact": "danielfortune.pro@gmail.com",
+  "license": "ISC"
+}
