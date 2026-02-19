@@ -1,33 +1,45 @@
-import { input } from "../utils/input.js";
-import { getAllBooks, addBook } from "../database/operations.js";
-
+import BookRepository from "../database/bookRepository";
 /** This class handles library functions */
 class Library {
-  // static library = [];
-
-  /** Makes array from books in the DB */
-  static books = getAllBooks();
-
-
   /** Prints entire library */
   static getLibrary() {
-    // console.log(" ");
-    // console.log(`Voici votre Bibliothèque :`);
+    this.books = BookRepository.getAllBooks();
+    console.log(`\nVoici votre Bibliothèque :`);
 
     this.books.forEach((book) => {
+      const boolIntoString =
+        book.isRead === 1
+          ? "\n> [✓] Vous avez lu ce livre. \n"
+          : "\n> [ ] Vous n'avez pas encore lu ce livre. \n";
       console.log(
-        `#${book.id} "${book.title}" de ${book.author}. ${book.isRead}`,
+        `\n#${book.id} "${book.title}" de ${book.author}. ${boolIntoString}`,
       );
     });
   }
-
   /** Makes a new book from the 'Book' Constructor
-   * 
+   *
    * @param {string} title Book Title
    * @param {string} author Book Author
    */
-  static setBook(title, author) {
-    new Livre(title, author);
+  static createBook(title, author, isRead = 0) {
+    ((this.title = title), (this.author = author), (this.isRead = isRead));
+    BookRepository.addBook(this.title, this.author, (this.isRead = isRead));
+    console.log(`\nVous avez ajouté "${this.title}" de ${this.author}.\n`);
+  }
+
+  static updateBookTitle(id, newTitle) {
+    ((this.id = id),
+      (this.newTitle = newTitle),
+      BookRepository.updateBookTitle(this.id));
+  }
+
+  static updateBookStatus(id) {
+    this.id = id;
+    const book = BookRepository.getBookbyId(this.id);
+    BookRepository.updateBookTitle(this.id, 1);
+    console.log(
+      `\nFélicitations ! Vous avez lu le livre n°${id}, "${book.title}" !\n`,
+    );
   }
 }
 

@@ -1,13 +1,24 @@
+import UserRepository from "../database/UserRepository";
+
 class User {
-  constructor(name, age, favoriteBook) {
+  constructor(name, favoriteBook) {
     this.name = name;
-    this.age = age;
     this.favoriteBook = favoriteBook;
+    UserRepository.addUser(this.name, this.favoriteBook);
   }
 
-  static setUser(name, userAge, favoriteBook) {
-    new User(name, userAge, favoriteBook);
+  static getUser() {
+    this.users = UserRepository.getAllUsers();
+    console.log(`\nVos Informations :`);
+
+    this.users.forEach((user) => {
+      console.log(
+        `\nVotre nom: ${user.name} \nVotre livre préféré: ${user.favoriteBook}`,
+      );
+    });
   }
+
+ 
 }
 
 export default User;

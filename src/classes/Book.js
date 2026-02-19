@@ -1,29 +1,13 @@
+import BookRepository from "../database/bookRepository";
 class Book {
-  constructor(title, author, isRead = false) {
-    this.id;
+  constructor(id, title, author, isRead = 0) {
+    if (!title.trim() || !author.trim()) {
+      throw new Error("Le titre et l'auteur sont requis !");
+    }
+    this.id = id;
     this.title = title;
     this.author = author;
     this.isRead = isRead;
-    addBook(this.title, this.author);
-    console.log(`Vous avez ajouté "${title}" de ${author}.x`);
-  }
-
-  // if (book.isRead = 0) {
-
-  // }
-
-  static setTitle(newTitle) {
-    this.title = newTitle;
-    console.log(
-      `Le titre a bien été modifié : "${this.title}" de ${this.author}`,
-    );
-  }
-
-  static setAuthor(newAuthor) {
-    this.author = newAuthor;
-    console.log(
-      `L'auteur a bien été modifié : "${this.title}" de ${this.author}`,
-    );
   }
 }
 
