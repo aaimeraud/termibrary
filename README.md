@@ -54,3 +54,11 @@ src/
 └── utils/
     └── input.js         # Terminal input helper
 ```
+
+## AI Usage
+
+I am limiting my use of AI and allowing myself to use it only to :
+- Ask questions when I'm stuck or if I need to ask something specific. 
+- Ask if "my code follows the rules and best practices of OOP"
+- Learn the things I haven't seen in class yet.
+- Enhance this readme (I started writing it and then asked Copilot to "make it cleaner").

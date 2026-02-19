@@ -56,3 +56,12 @@ src/
 └── utils/
     └── input.js         # Utilitaire de saisie terminal
 ```
+
+## Usage de l'IA
+
+Je limite mon usage de l'IA et me permets de l'utiliser uniquement pour :
+
+- Poser des questions quand je suis bloqué ou si je dois exprimer un besoin précis.
+- Demander si "mon code respecte les règles et bonnes pratiques de la POO".
+- Apprendre des choses que je n'ai pas encore vues en cours.
+- Améliorer ce readme (j'ai commencé à l'écrire puis j'ai demandé à Copilot de "le rendre plus propre").
