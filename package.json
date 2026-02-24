@@ -1,0 +1,10 @@
+{
+  "name": "termibrary",
+  "author": "Daniel Fortuné",
+  "module": "src/main.js",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "bun src/main.js"
+  }
+}
